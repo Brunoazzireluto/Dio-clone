@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import {MdEmail, MdLock } from 'react-icons/md'
+import {api} from "../../services/api"
 import { Container, Column,  Wrapper, Row, Title, TitleLogin, SubtitleLogin, ForgotText, SigninText} from './styles'
 
 
@@ -17,19 +18,28 @@ const schema = yup.object({
 
 const Login = () => {
 
+    const navigate = useNavigate();
+
     const { control, handleSubmit, watch, formState: { errors, isValid } } = useForm({
         resolver: yupResolver(schema),
         mode:'onChange'
     });
 
     console.log(isValid, errors);
-    const onSubmit = data => console.log(data);
+    const onSubmit = async formData => {
+        try{
+            const {data} = await api.get(`users?email=${formData.email}&senha=${formData.password}`);
+            if (data.length === 1){
+                navigate('/feed')
+            }else{
+                alert('Email ou senha inválidos')
+            }
+        }catch{
+            alert("Houve um Errro, tente novamente")
+        }
+    };
 
-    const navigate = useNavigate();
 
-    const handleClickLogin = () => {
-        navigate('/feed')
-    }
     
 
     return (
