@@ -14,8 +14,9 @@ import {
     UserPicture,
     ButtonDio
 } from './styles'
+import { IHeader } from './type';
 
-const Header = ({auth}) => {
+const Header = ({auth}: IHeader) => {
     const navigate = useNavigate();
 
     const handleClickhome = () => {

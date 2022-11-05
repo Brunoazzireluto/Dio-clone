@@ -8,6 +8,7 @@ import * as yup from "yup";
 import {MdEmail, MdLock } from 'react-icons/md'
 import {api} from "../../services/api"
 import { Container, Column,  Wrapper, Row, Title, TitleLogin, SubtitleLogin, ForgotText, SigninText} from './styles'
+import { IFormData } from './types';
 
 
 const schema = yup.object({
@@ -20,13 +21,13 @@ const Login = () => {
 
     const navigate = useNavigate();
 
-    const { control, handleSubmit, watch, formState: { errors, isValid } } = useForm({
+    const { control, handleSubmit, formState: { errors, isValid } } = useForm<IFormData>({
         resolver: yupResolver(schema),
         mode:'onChange'
     });
 
     console.log(isValid, errors);
-    const onSubmit = async formData => {
+    const onSubmit = async (formData: IFormData) => {
         try{
             const {data} = await api.get(`users?email=${formData.email}&senha=${formData.password}`);
             if (data.length === 1){

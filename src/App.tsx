@@ -3,7 +3,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { Test } from "./pages";
 
 import { Feed } from "./pages/feed";
 import {Home} from './pages/home';
@@ -17,7 +16,6 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/feed" element={<Feed />}></Route>
-        <Route path="/test" element={<Test />}></Route>
       </Routes>
     </BrowserRouter>
   );
