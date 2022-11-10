@@ -56,22 +56,41 @@ export const SubtitleLogin = styled.p `
     line-height: 25px;
 `
 
-export const ForgotText = styled.p `
+export const InfoText = styled.p `
+    margin: 10px 0 ;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFF;
+`
+
+export const RowSing = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+`
+
+export const SignupText = styled.p `
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
-    color: #E5E044;
+    color: #FFF;
 `
-export const SigninText = styled.a `
+
+export const SignupTextLink = styled.a `
+    margin-left: 5px ;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
-    color: #E23DD7;
+    color: #23DD7A;
     cursor:pointer;
-
 `

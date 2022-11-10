@@ -41,6 +41,11 @@ const Login = () => {
     };
 
 
+
+    const handleClickSignUp = () => {
+        navigate('/registration')
+    }
+
     
 
     return (
@@ -65,7 +70,7 @@ const Login = () => {
                     </form>
                 <Row>
                     <ForgotText>Esqueci minha senha</ForgotText>
-                    <SigninText>Criar Conta</SigninText>
+                    <SigninText onClick={handleClickSignUp} >Criar Conta</SigninText>
                 </Row>
                 </Wrapper>
             </Column>

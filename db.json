@@ -1,6 +1,28 @@
 {
-    "users": [
-      { "id": 1, "name": "Bruno", "email": "bruno@email.com", "senha":"123456" },
-      { "id": 2, "name": "Azzi", "email": "azzi@email.com", "senha":"123456" }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Bruno",
+      "email": "bruno@email.com",
+      "senha": "123456"
+    },
+    {
+      "id": 2,
+      "name": "Azzi",
+      "email": "azzi@email.com",
+      "senha": "123456"
+    },
+    {
+      "name": "abc",
+      "email": "abcs@mail.com",
+      "senha": "123456789",
+      "id": 3
+    },
+    {
+      "name": "abcd",
+      "email": "abcdds@mail.com",
+      "senha": "123456789",
+      "id": 4
+    }
+  ]
 }
